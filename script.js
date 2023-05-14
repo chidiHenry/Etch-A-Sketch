@@ -1,13 +1,23 @@
 
 const container = document.getElementById('grid')
 
-let columns = 16;
-let rows = 16;
+const gridButton = document.getElementById('gridButton');
 
-for (let i = 0; i < columns; i++) {
+gridButton.addEventListener('click', (e)=>{
+const val = prompt('Enter Grid Size', 12);
+ getGridSize(val);
+})
+
+
+
+// let columns = 16;
+// let rows = 16;
+function getGridSize (size){
+
+for (let i = 0; i < size; i++) {
     const column = document.createElement('div');
     column.className = 'column'
-    for(let j=0; j< rows; j++){
+    for(let j=0; j< size; j++){
         const row = document.createElement('div');
         row.className = 'row';
         row.textContent = i + '-' +j;
@@ -18,6 +28,7 @@ for (let i = 0; i < columns; i++) {
     container.appendChild(column);
     
 }
+}
 //document.body.appendChild(container);
 
 container.addEventListener('mouseover', function(e){
@@ -25,3 +36,4 @@ container.addEventListener('mouseover', function(e){
 e.target.classList.add('hoverMouse');
 
 })
+
