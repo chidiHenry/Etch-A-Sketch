@@ -1,22 +1,39 @@
 #grid{
     display: flex;
-    background-color: #2196F3;
-    width: 1000px;;;
+    overflow: hidden;
+    background:white;
+    width: 950px;
+    height: 650px;
     
+  
     }
     .column{
         flex: 1;
+        border: 1px solid black;
+        background-color: azure;
+        width: min-content;
+        height: min-content;
+       
     } 
 
     .row{
       margin: 2px;
-      background: gold;
-      text-align: center;
+      background: white;
+      min-height: 1.6em;
+      border:  1px solid red;
+      
+      
     }
     .hoverMouse{
       background-color: green;
     }
     #gridButton{
+      padding: 10px;
+      margin: 5px 5px 14px 0px;
+    }
+    #buttons{
+      width: 25px;
+      height:  max-content;
       padding: 10px;
       margin: 5px 5px 14px 0px;
     }
