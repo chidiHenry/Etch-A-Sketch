@@ -3,10 +3,22 @@ const container = document.getElementById('grid')
 
 const gridButton = document.getElementById('gridButton');
 
-gridButton.addEventListener('click', (e)=>{
-const val = prompt('Enter Grid Size', 12);
- getGridSize(val);
+function clearGrid(){
+    location.reload();
+}
+
+const resetButton = document.getElementById('reset');
+
+resetButton.addEventListener('click', ()=>{
+    clearGrid();
 })
+
+gridButton.addEventListener('click', ()=>{
+        const val = prompt('Enter a number: example 12 to create a 12X12 Grid', 12);
+        getGridSize(val);     
+        
+})
+
 
 
 
@@ -20,8 +32,13 @@ for (let i = 0; i < size; i++) {
     for(let j=0; j< size; j++){
         const row = document.createElement('div');
         row.className = 'row';
-        row.textContent = i + '-' +j;
-
+       // row.textContent = i;
+        
+    if(size>100){
+        return alert(`Choose an number between 1 and 100`);
+    }
+    
+     
         column.appendChild(row);
     }
     
